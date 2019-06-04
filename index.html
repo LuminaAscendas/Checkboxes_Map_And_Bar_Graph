@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="HandheldFriendly" content="true" />
+    <title>Checkboxes Map & Bar Graph</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" />
+    <script type="text/javascript" src="assets/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/data.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+<body>	
+
+	<div role='main' style='display:none'></div>
+	<div role='navigation' style='display:none'></div>
+	<a href="#begin_container" id='linkId' >Skip to main content</a>
+	
+	<div id='main_container' >
+		<div class="preload">
+            <div class="loader"></div>
+        </div> 
+		<div id='begin_page'>
+			<div id='begin_focus' role='none'></div>
+			<img id='begin_container' role='img' src='assets/images/17-03_begin.png' alt='World Map & Bar Graph'/>
+			<div role='button' id='begin_btn' aria-label='Begin'>Begin</div>
+			<div id='begin_end_focus'  role='none'></div> 
+		</div>
+		<div id='focus_guard_1' role='none'>???</div>
+		<div id='text_Div'>
+			<h1 id='text_container' class='tab_index' role='heading' aria-level='1'></h1>
+		</div>
+		<div id='responsive_container'><hr/>
+			<div id='image_container' role='img' aria-label='World Map & Bar Graph'>
+					<div class="mainGraph"></div>
+					<div class="mainGraph_blank_grayLines"></div>
+					<div class="mainGraph_blank_lakes"></div>
+					<div class="mainGraph_blank_blueOutLines"></div>
+					<div class="graph graph_1"></div>
+					<div class="graph graph_2"></div>
+					<div class="graph graph_3"></div>
+					<div class="graph graph_4"></div>
+					<div class="graph graph_5"></div>
+					<div class="graph graph_6"></div>
+			</div>
+			
+			<div class="intrativeContainer"></div>
+			
+			<div role='button' id='restart' aria-label='Reset'>Reset</div>
+		</div>
+		<div id='focus_guard_2' role='none'>???</div> 
+	</div>
+
+	<!-- <div id='extra_tab'></div>	 -->
+	<!-- </main> -->
+<script>
+		$.holdReady(true);
+		var preloadComplete=false;
+		$.getScript("./assets/js/lib/preloadjs-0.6.2.min.js", function() {
+			$.holdReady(false);
+			manifest = [
+				"assets/images/common/loading.gif",
+				"assets/images/common/close_btn.png",
+				"assets/images/17-03_begin.png",
+				"assets/images/17-03_beige.png",
+				"assets/images/17-03_blank.png",
+				"assets/images/17-03_blue.png",
+				"assets/images/17-03_blue_outlines.png",
+				"assets/images/17-03_brown.png",
+				"assets/images/17-03_green.png",
+				"assets/images/17-03_grey_lines.png",
+				"assets/images/17-03_lakes.png",
+				"assets/images/17-03_voilet.png",
+				"assets/images/17-03_yellow.png",
+		
+			];
+			preload = new createjs.LoadQueue(true);
+			preload.addEventListener("progress", function() {
+				//console.log('Updating preloading progress...'+Math.round(preload.progress*100)+"%");
+			});
+			preload.addEventListener("complete", function(){
+				$('.preload').fadeOut();
+			});
+			preload.setMaxConnections(5);
+			preload.loadManifest(manifest);
+		});
+</script>
+<script type="text/javascript" src="assets/js/lib/preloadjs-0.6.2.min.js"></script>
+<script type="text/javascript" src="assets/js/lib/fitToScreen.js"></script>
+</body>
+</html>

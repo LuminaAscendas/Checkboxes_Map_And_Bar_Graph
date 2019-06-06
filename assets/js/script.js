@@ -19,7 +19,7 @@ $(document).ready(function(){
 		columns+='<div class="column column'+j+'">'+insideDiv+'</div>';
 		insideDiv="";
 	}
-	intrativeContainer = "<div class='intrativeHeading' role='heading' aria-level='2'>Coal deposits</div>"+columns;
+	intrativeContainer = "<div class='intrativeHeading' role='heading' aria-level='2'>Coal Deposits</div>"+columns;
 	$('.intrativeContainer').html(intrativeContainer);
 	
 	$('#text_container').html(direction_text);
